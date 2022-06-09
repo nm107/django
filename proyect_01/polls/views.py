@@ -2,8 +2,11 @@ from ast import Return, parse
 from cgitb import text
 import math
 from re import I
+from tempfile import template
 from django.http import HttpResponse
+from django.shortcuts import render
 
+from polls import urls
 
 def index(request):
     return HttpResponse("welcome compa")
@@ -40,4 +43,6 @@ def func_num(request,valors):
             %s  es: %s
             """ % (valors,resultado3)
     return HttpResponse(texto)
-    
+
+def home(request):
+    return render(request, 'polls/index.html')
