@@ -5,8 +5,8 @@ from re import I
 from tempfile import template
 from django.http import HttpResponse
 from django.shortcuts import render
-
 from polls import urls
+from polls.models import Articulo
 
 def index(request):
     return HttpResponse("welcome compa")
@@ -46,3 +46,10 @@ def func_num(request,valors):
 
 def home(request):
     return render(request, 'polls/index.html')
+
+
+def ingresar_producto(request):
+    #nombre_aux = 
+    #categoria_aux =
+    #precio_aux = 
+    return render(request, 'polls/ingresar_producto.html')
